@@ -169,15 +169,15 @@ class Instructor extends Lambdasian{
 class Student extends Lambdasian {
   constructor(attr){
     super(attr);
-    this.previousBackground = 'Operations Manager';
-    this.className ='WEBPT21';
-    this.favSubjects = ['HTML','CSS','JS'];
+    this.previousBackground= attr.previousBackground;
+    this.className= attr.className;
+    this.favSubjects= attr.favSubjects;
   }
   listSubjects(){
-    return `Loving ${this.favSubjects[0]},${this.favSubjects[1]},${this.favSubjects[2]}}`
+    return `Loving ${this.favSubjects[0]},${this.favSubjects[1]},${this.favSubjects[2]}`
   }
 
-  prAssignment(subject){
+  PRAssignment(subject){
     return `${this.name} has submitted a PR for ${subject}`;
   }
 
