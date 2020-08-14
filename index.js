@@ -180,6 +180,10 @@ class Student extends Lambdasian {
   prAssignment(subject){
     return `${this.name} has submitted a PR for ${subject}`;
   }
+
+  sprintChallenge(subject){
+    return `${this.name} has begun spring challenge on ${subject}`
+  }
 }
 
 /*
