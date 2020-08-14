@@ -113,11 +113,18 @@ class Lambdasian {
     this.age = myObj.age;
     this.location = myObj.location;
   }
-
   speak(){
-    return `Hello my name is ${this.name}, I am from ${this.location}`
+    return `Hello my name is ${this.name}, I am from ${this.location}`;
   }
 }
+
+const newLambdasian = new Lambdasian({
+  name:'Ozzy',
+  age:25,
+  location:'Miami'
+})
+
+console.log(newLambdasian);
 
 /*
   TASK 4
@@ -136,9 +143,9 @@ class Lambdasian {
 class Instructor extends Lambdasian{
   constructor(attr){
     super(attr);
-    this.specialty = 'SQL';
-    this.favLanguage = 'C#';
-    this.catchPhrase = "Don't forget the homies";
+    this.specialty = attr.specialty;
+    this.favLanguage = attr.favLanguage;
+    this.catchPhrase = attr.catchPhrase;
   }
 
   demo(subject){
@@ -146,10 +153,12 @@ class Instructor extends Lambdasian{
   }
 
   grade(student,subject){
-    return `${student.name} receives a perfect score on ${subject}`
+    return `${student.name} receives a perfect score on ${subject}`;
   }
 
 }
+
+
 
 /*
   TASK 5
@@ -199,8 +208,19 @@ class Student extends Lambdasian {
         + `standUp` a method that takes in a slack channel and returns `{name} announces to {channel}, @channel standy times!`
         + `debugsCode` a method that takes in a student object and a subject and returns `{name} debugs {student.name}'s code on {subject}`
 */
-class ProjectManager {
+class ProjectManager extends Instructor {
+  constructor(attr){
+    super(attr);
+    this.gradClassName = attr.gradClassName;
+    this.favInstructor = attr.favInstructor;
+  }
+  standUp(channel){
+    return `${this.name} announces to ${channel}, @channel standy times!`
+  };
 
+  debugsCode(student,subject){
+    return `${this.name} debugs ${student.name}'s code on ${subject}`;
+  };
 }
 
 /*
